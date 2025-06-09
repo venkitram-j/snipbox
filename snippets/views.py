@@ -67,7 +67,7 @@ class SnippetsAPIView(viewsets.ModelViewSet):
 
 class TagAPIView(viewsets.ReadOnlyModelViewSet):
     queryset = Tag.objects.all()
-    permission_classes = [ permissions.IsAuthenticatedOrReadOnly ]
+    permission_classes = [ permissions.IsAuthenticated ]
     
     def get_serializer_class(self):
         if self.action in [ "list" ]:
